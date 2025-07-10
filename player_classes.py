@@ -5,7 +5,7 @@ class Entity:
     def hand_total(self):
         total = 0
         num_of_soft_aces = 0
-        
+
         for card in self._hand:
             card_value = card.get_value()
 
@@ -25,6 +25,9 @@ class Entity:
 
         return total
 
+    def __str__(self):
+        return "Dealer"
+    
     def get_hand(self):
         return self._hand
     
@@ -35,6 +38,9 @@ class Player(Entity):
     
     def get_chips(self):
         return self._chips
+    
+    def __str__(self):
+        return "Player"
     
     def add_chips(self, num_of_chips):
         self._chips += num_of_chips
